@@ -1,0 +1,60 @@
+﻿@using ApexSole_Sneakers.Data.Enum
+@using ApexSole_Sneakers.ViewModels
+@model EditTshirtViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="TshirtName">Назва футболки</label>
+        <input asp-for="TshirtName" class="form-control" placeholder="Назва футболки">
+        <span asp-validation-for="TshirtName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TshirtSize">Розмір</label>
+        <input asp-for="TshirtSize" class="form-control" placeholder="Розмір">
+        <span asp-validation-for="TshirtSize" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TshirtBrand">Бренд футболок</label>
+        <input asp-for="TshirtBrand" class="form-control" placeholder="Бренд футболок">
+        <span asp-validation-for="TshirtBrand" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TshirtType">Тип футболки</label>
+        <select asp-for="TshirtType" asp-items="@Html.GetEnumSelectList<TshirtType>()">
+            <option>--Оберіть--</option>
+        </select>
+        <span asp-validation-for="TshirtType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Gender">Стать</label>
+        <select asp-for="Gender" asp-items="@Html.GetEnumSelectList<Gender>()">
+            <option>--Оберіть--</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TshirtColor">Колір футболки</label>
+        <input asp-for="TshirtColor" class="form-control" placeholder="Колір футболки">
+        <span asp-validation-for="TshirtColor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TshirtPrice">Ціна футболки</label>
+        <input asp-for="TshirtPrice" class="form-control" placeholder="Ціна футболки">
+        <span asp-validation-for="TshirtPrice" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TshirtDescription">Опис футболки</label>
+        <input asp-for="TshirtDescription" class="form-control" placeholder="Опис футболки">
+        <span asp-validation-for="TshirtDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Зображення</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Зображення">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Створити</button>
+</form>

@@ -1,0 +1,114 @@
+﻿@using ApexSole_Sneakers.Data.Enum
+@model Tshirt
+@{
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видалення футболки</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 0px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-confirm {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ви впевнені, що хочете видалити цю футболку?</h1>
+
+        <form method="post" asp-action="Delete" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="TshirtName">Назва футболки</label>
+                <input asp-for="TshirtName" class="form-control" placeholder="Назва футболки">
+                <span asp-validation-for="TshirtName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="TshirtSize">Розмір</label>
+                <input asp-for="TshirtSize" class="form-control" placeholder="Розмір">
+                <span asp-validation-for="TshirtSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="TshirtBrand">Бренд футболки</label>
+                <input asp-for="TshirtBrand" class="form-control" placeholder="Бренд футболки">
+                <span asp-validation-for="TshirtBrand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="TshirtType">Тип футболки</label>
+                <select asp-for="TshirtType" asp-items="@Html.GetEnumSelectList<TshirtType>()">
+                    <option>--Оберіть--</option>
+                </select>
+                <span asp-validation-for="TshirtType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Gender">Стать</label>
+                <select asp-for="Gender" asp-items="@Html.GetEnumSelectList<Gender>()">
+                    <option>--Оберіть--</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="TshirtColor">Колір футболки</label>
+                <input asp-for="TshirtColor" class="form-control" placeholder="Колір футболки">
+                <span asp-validation-for="TshirtColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="TshirtPrice">Ціна футболки</label>
+                <input asp-for="TshirtPrice" class="form-control" placeholder="Ціна футболки">
+                <span asp-validation-for="TshirtPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="TshirtDescription">Опис футболки</label>
+                <input asp-for="TshirtDescription" class="form-control" placeholder="Опис футболки">
+                <span asp-validation-for="TshirtDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Image">Зображення</label>
+                <input asp-for="Image" type="file" class="form-control" placeholder="Зображення">
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-danger">Видалити</button>
+            <a href="#" class="btn btn-secondary btn-confirm">Скасувати</a>
+        </form>
+    </div>
+
+</body>
+</html>

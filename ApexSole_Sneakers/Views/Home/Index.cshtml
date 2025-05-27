@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hero-section {
+            position: relative;
+            padding: 3rem;
+            background-color: #f8f9fa;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-section .content {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+        }
+
+        .hero-section .btn {
+            margin-top: 1rem;
+        }
+
+        .feature-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 3rem;
+        }
+
+        .feature-box {
+            flex: 1 1 calc(33% - 1rem);
+            margin: 0.5rem;
+            background-color: #343a40;
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .feature-box h2 {
+            padding: 1rem;
+        }
+
+        .feature-box img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 0 0 10px 10px;
+        }
+
+        @@media (max-width: 768px) {
+            .feature-box {
+                flex: 1 1 100%;
+                margin: 0.5rem 0;
+            }
+        }
+
+        .bg-light-custom {
+            background-color: #f8f9fa !important;
+        }
+
+        .bg-dark-custom {
+            background-color: #343a40 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="content">
+            <h1 class="display-4 font-weight-normal">ApexSole Sneakers</h1>
+            <p class="lead font-weight-normal">ПРОЙДІТЬ СТЕЖКОЮ МОДНОЇ ДОСКОНАЛОСТІ</p>
+            <a class="btn btn-outline-secondary" asp-area="" asp-controller="Sneakers" asp-action="Index">Купуйте зараз</a>
+        </div>
+    </div>
+
+    <div class="feature-section">
+        <div class="feature-box bg-dark-custom">
+            <h2 class="display-5">НАЙКРАЩЕ ДЛЯ БАСКЕТБОЛУ</h2>
+            <img src="https://kingsquaresportscentre.com/wp-content/uploads/2023/09/AdobeStock_520402576-scaled.jpeg" alt="Basketball Sneakers">
+        </div>
+        <div class="feature-box bg-dark-custom">
+            <h2 class="display-5">НАЙКРАЩЕ ДЛЯ ПРОГУЛЯНОК</h2>
+            <img src="https://pittsburghearthday.org/wp-content/uploads/2021/03/Walk-Every-Day.jpg" alt="Walking Sneakers">
+        </div>
+        <div class="feature-box bg-dark-custom">
+            <h2 class="display-5">НАЙКРАЩЕ ДЛЯ ТРЕНУВАННЯ</h2>
+            <img src="https://www.verywellfit.com/thmb/Xio5I7FgQh0GRwhS6qWAio3amOM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Pushups-5680bb925f9b586a9edf3927.jpg" alt="Training Sneakers">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

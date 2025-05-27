@@ -1,0 +1,27 @@
+﻿@using ApexSole_Sneakers.ViewModels
+@model EditUserViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" asp-action="EditProfile" enctype="multipart/form-data">
+    <input type="hidden" id="Id" name="Id" asp-for="Id"/>
+    <div class="form-group">
+        <label asp-for="Address">Адреса</label>
+        <input asp-for="Address" class="form-control" placeholder="Адреса">
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber">Номер телефону</label>
+        <input asp-for="PhoneNumber" class="form-control" placeholder="Номер телефону">
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Image">Зображення профілю</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Зображення профілю">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Надіслати</button>
+</form>

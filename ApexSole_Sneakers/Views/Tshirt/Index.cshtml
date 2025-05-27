@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Tshirt>
+
+@{
+    ViewData["Title"] = "Tshirt Collection";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .search-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+            .search-bar .form-control {
+                max-width: 300px;
+                margin-right: 10px;
+            }
+
+            .search-bar .btn {
+                margin-left: 10px;
+            }
+
+        .card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+        .card-img-top {
+            border-radius: 0;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+        }
+
+            .card-body .card-text {
+                margin: 0.5rem 0;
+            }
+
+        .btn-group .btn {
+            margin: 0 5px;
+        }
+
+        .text-danger {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row search-bar">
+                <div class="col-md-6">
+                    <form class="d-flex" asp-action="Index" asp-controller="Tshirt">
+                        <input name="searchName" class="form-control me-1" type="search" placeholder="Пошук" aria-label="Search" />
+                        <button class="btn btn-dark" type="submit">Пошук</button>
+                    </form>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a asp-action="Index" class="btn btn-danger">Очистити</a>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="@item.Image" alt="@item.TshirtName">
+                            <div class="card-body">
+                                <p class="card-text font-weight-bold">@item.TshirtName</p>
+                                <p class="card-text text-muted">@item.TshirtBrand</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a asp-controller="Tshirt" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Деталі</a>
+                                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                        {
+                                            <a asp-controller="Tshirt" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Редагувати</a>
+                                            <a asp-controller="Tshirt" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Видалити</a>
+                                        }
+                                    </div>
+                                    <small class="text-muted">@item.TshirtType</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

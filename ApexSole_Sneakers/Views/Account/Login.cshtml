@@ -1,0 +1,85 @@
+﻿@using ApexSole_Sneakers.ViewModels
+@model LoginViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .login-container {
+            margin-top: 50px;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .login-container h4 {
+                margin-bottom: 1.5rem;
+                font-weight: bold;
+                text-align: center;
+            }
+
+        .alert-danger {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btn-outline-success {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .btn-outline-secondary {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-container">
+                    <h4>Увійдіть до свого облікового запису</h4>
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="col-md-12 alert alert-danger">
+                            <span>@TempData["Error"]</span>
+                        </div>
+                    }
+                    <form asp-action="Login">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label">Електронна пошта</label>
+                            <input asp-for="Email" class="form-control">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label">Пароль</label>
+                            <input asp-for="Password" class="form-control" type="password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-outline-success" type="submit" value="Увійти">
+                            <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Скасувати</a>
+                        </div>
+                    </form>
+                    <a class="btn btn-outline-danger" href="/Account/ExternalLogin?provider=Google">Увійти через Google</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

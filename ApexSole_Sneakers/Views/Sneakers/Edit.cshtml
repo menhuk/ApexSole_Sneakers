@@ -1,0 +1,60 @@
+﻿@using ApexSole_Sneakers.Data.Enum
+@using ApexSole_Sneakers.ViewModels
+@model EditSneakersViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="SneakersName">Назва кросівок</label>
+        <input asp-for="SneakersName" class="form-control" placeholder="Назва">
+        <span asp-validation-for="SneakersName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SneakersDescription">Опис кросівок</label>
+        <input asp-for="SneakersDescription" class="form-control" placeholder="Опис">
+        <span asp-validation-for="SneakersDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SneakersBrand">Бренд кросівок</label>
+        <input asp-for="SneakersBrand" class="form-control" placeholder="Бренд кросівок">
+        <span asp-validation-for="SneakersBrand" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SneakersType">Тип кросівок</label>
+        <select asp-for="SneakersType" asp-items="@Html.GetEnumSelectList<SneakersType>()">
+            <option>--Оберіть--</option>
+        </select>
+        <span asp-validation-for="SneakersType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Gender">Стать</label>
+        <select asp-for="Gender" asp-items="@Html.GetEnumSelectList<Gender>()">
+            <option>--Оберіть--</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SneakersColor">Колір кросівок</label>
+        <input asp-for="SneakersColor" class="form-control" placeholder="Колір кросівок">
+        <span asp-validation-for="SneakersColor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SneakersPrice">Ціна кросівок</label>
+        <input asp-for="SneakersPrice" class="form-control" placeholder="Ціна кросівок">
+        <span asp-validation-for="SneakersPrice" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SneakersSize">Розмір кросівок</label>
+        <input asp-for="SneakersSize" class="form-control" placeholder="Розмір кросівок">
+        <span asp-validation-for="SneakersSize" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Зображення</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Зображення">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Надіслати</button>
+</form>

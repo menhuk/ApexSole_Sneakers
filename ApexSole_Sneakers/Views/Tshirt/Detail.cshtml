@@ -1,0 +1,94 @@
+﻿@model Tshirt
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.TshirtName - T-shirt Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin-top: 0px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item-heading h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item-heading small {
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+
+        .portfolio-item-row {
+            margin-top: 30px;
+        }
+
+        .tshirt-image {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tshirt-details {
+            padding-left: 30px;
+        }
+
+            .tshirt-details h3 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+            .tshirt-details ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                .tshirt-details ul li {
+                    margin-bottom: 0.5rem;
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Portfolio Item Heading -->
+        <div class="portfolio-item-heading">
+            <h1>@Model.TshirtName</h1>
+        </div>
+
+        <!-- Portfolio Item Row -->
+        <div class="row portfolio-item-row">
+            <div class="col-md-8">
+                <div class="tshirt-image">
+                    <img class="img-fluid" src="@Model.Image" alt="">
+                </div>
+            </div>
+
+            <div class="col-md-4 tshirt-details">
+                <h3>Деталі</h3>
+                <ul>
+                    <li><strong>Бренд:</strong> @Model.TshirtBrand</li>
+                    <li><strong>Розмір:</strong> @Model.TshirtSize</li>
+                    <li><strong>Тип:</strong> @Model.TshirtType</li>
+                    <li><strong>Опис:</strong> @Model.TshirtDescription</li>
+                    <li><strong>Color:</strong> @Model.TshirtColor</li>
+                    <li><strong>Стать:</strong> @Model.Gender</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

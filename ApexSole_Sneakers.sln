@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApexSole_Sneakers", "ApexSole_Sneakers\ApexSole_Sneakers.csproj", "{102FA618-200E-4201-B7DA-C0C420BAF419}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apex_Sole_Sneakers.Tests", "Apex_Sole_Sneakers.Tests\Apex_Sole_Sneakers.Tests.csproj", "{05658065-FD84-49DC-9A38-BE73F406313D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{102FA618-200E-4201-B7DA-C0C420BAF419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{102FA618-200E-4201-B7DA-C0C420BAF419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{102FA618-200E-4201-B7DA-C0C420BAF419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{102FA618-200E-4201-B7DA-C0C420BAF419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05658065-FD84-49DC-9A38-BE73F406313D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05658065-FD84-49DC-9A38-BE73F406313D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05658065-FD84-49DC-9A38-BE73F406313D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05658065-FD84-49DC-9A38-BE73F406313D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C4D296E-A51C-4227-93A9-4B98EE57B56E}
+	EndGlobalSection
+EndGlobal
