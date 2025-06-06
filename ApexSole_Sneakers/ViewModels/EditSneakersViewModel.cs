@@ -14,5 +14,6 @@ namespace ApexSole_Sneakers.ViewModels
         public int SneakersSize { get; set; }
         public int SneakersPrice { get; set; }
         public string SneakersDescription { get; set; } = string.Empty;
+        public string Preview3d { get; set; } = string.Empty;
     }
 }

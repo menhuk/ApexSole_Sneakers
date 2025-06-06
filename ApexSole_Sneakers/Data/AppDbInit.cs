@@ -9,15 +9,15 @@ namespace ApexSole_Sneakers.Data
         {
             var userManager = serviceProvider.GetRequiredService<UserManager<AppUser>>();
 
-            var adminEmail = "admin432@gmail.com";
-            var adminPassword = "56n74d00QX123456!"; 
+            var adminEmail = "admin438@gmail.com";
+            var adminPassword = "56n74d00QX123456!32"; 
             var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
             if (adminUser == null)
             {
                 var newAdmin = new AppUser
                 {
-                    UserName = "MainAdmin",
+                    UserName = "MainAdmin438",
                     Email = adminEmail,
                     EmailConfirmed = true
                 };

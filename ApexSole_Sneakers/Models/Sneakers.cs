@@ -1,6 +1,7 @@
 ﻿using ApexSole_Sneakers.Data.Enum;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ApexSole_Sneakers.Models
 {
@@ -20,6 +21,8 @@ namespace ApexSole_Sneakers.Models
         [ForeignKey("AppUser")]
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
+
+        public string Preview3d {get; set;} = string.Empty;
 
 
     }

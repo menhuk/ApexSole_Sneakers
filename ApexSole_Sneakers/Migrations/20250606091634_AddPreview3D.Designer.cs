@@ -4,6 +4,7 @@ using ApexSole_Sneakers.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApexSole_Sneakers.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250606091634_AddPreview3D")]
+    partial class AddPreview3D
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -373,7 +376,6 @@ namespace ApexSole_Sneakers.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Preview3d")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SneakersBrand")
@@ -487,13 +489,13 @@ namespace ApexSole_Sneakers.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c09e9c31-60f0-4ff6-985b-b95cae12af23",
+                            Id = "48be39b8-55a5-41e1-9b9d-07728d041a56",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "a0afca0d-0994-48cd-ac0c-2ff854471489",
+                            Id = "c467d207-e001-4d53-b6e8-d11022dee930",
                             Name = "User",
                             NormalizedName = "USER"
                         });

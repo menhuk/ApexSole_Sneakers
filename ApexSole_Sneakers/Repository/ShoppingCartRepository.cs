@@ -34,7 +34,7 @@ namespace ApexSole_Sneakers.Repository
         {
             _context.Remove(shoppingCart);
             return Save();
-        }
+        }     
         public bool Add(ShoppingCart shoppingCart)
         {
             _context.Add(shoppingCart);

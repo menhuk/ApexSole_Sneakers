@@ -4,6 +4,7 @@ using ApexSole_Sneakers.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApexSole_Sneakers.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250606094713_AddPreview3D2")]
+    partial class AddPreview3D2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -487,13 +490,13 @@ namespace ApexSole_Sneakers.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c09e9c31-60f0-4ff6-985b-b95cae12af23",
+                            Id = "21b55d8c-bd31-4ce4-a0fc-e406083e5360",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "a0afca0d-0994-48cd-ac0c-2ff854471489",
+                            Id = "be5d4bc4-e7d3-418b-a34d-64730d033fd2",
                             Name = "User",
                             NormalizedName = "USER"
                         });

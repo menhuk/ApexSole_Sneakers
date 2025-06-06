@@ -89,12 +89,12 @@
         </div>
     </div>
     <form method="post">
-            <input hidden asp-for="ProductId" />
+        <input hidden asp-for="ProductId" />
         <div class="row pl-2 mb-3">
             <div class="col-md-4">
                 <div class="input-group mb-3">
                     <span class="input-group-text bg-primary text-white border-0 fw-semibold" id="inputgroup-sizing-default">
-                            Кількість
+                        Кількість
                     </span>
                     <input asp-for="Count" type="number" value="1" class="form-control text-end" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
                 </div>
@@ -103,10 +103,11 @@
         <div class="row">
             <div class="col col-md-6 pb-1">
                 <button type="submit" class="btn btn-primary bd-gradient w-100 py-2  text-uppercase fw-semibold">
-                        Додати до кошика
+                    Додати до кошика
                 </button>
             </div>
         </div>
+            <a class="btn btn-primary" asp-action="Preview3D" asp-route-modelUrl=" @Model.Sneakers.Preview3d">Переглянути 3D-модель</a>
     </form>
 </div>
 </body>

@@ -41,6 +41,14 @@ namespace ApexSole_Sneakers.Controllers
             };
             return View(cart);
         }
+        public async Task<IActionResult> Preview3D(string modelUrl)
+        {
+            if (string.IsNullOrEmpty(modelUrl))
+            {
+                return RedirectToAction("Index");
+            }
+            return View("Preview3D", modelUrl);
+        }
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Detail(ShoppingCart? shoppingCart, int id)
@@ -90,7 +98,8 @@ namespace ApexSole_Sneakers.Controllers
                     SneakersSize = sneakersVM.SneakersSize,
                     SneakersType = sneakersVM.SneakersType,
                     Gender = sneakersVM.Gender,
-                    Image = result.Url.ToString()
+                    Image = result.Url.ToString(),
+                    Preview3d = sneakersVM.Preview3d
                 };
                 _sneakersRepository.Add(sneakers);
                 return RedirectToAction("Index");
@@ -116,7 +125,8 @@ namespace ApexSole_Sneakers.Controllers
                 SneakersSize = sneakers.SneakersSize,
                 SneakersType = sneakers.SneakersType,
                 Gender = sneakers.Gender,
-                URL = sneakers.Image
+                URL = sneakers.Image,
+                Preview3d = sneakers.Preview3d
             };
             return View(sneakersVM);
         }
@@ -154,6 +164,7 @@ namespace ApexSole_Sneakers.Controllers
                     SneakersType = sneakersVM.SneakersType,
                     Gender = sneakersVM.Gender,
                     Image = photoResult.Url.ToString(),
+                    Preview3d = sneakersVM.Preview3d
                 };
                 _sneakersRepository.Update(sneakersNew);
                 return RedirectToAction("Index");

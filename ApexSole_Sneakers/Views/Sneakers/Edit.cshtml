@@ -56,5 +56,10 @@
         <input asp-for="Image" type="file" class="form-control" placeholder="Зображення">
         <span asp-validation-for="Image" class="text-danger"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="Preview3d">3D-модель</label>
+        <input asp-for="Preview3d" class="form-control" placeholder="3D-модель">
+        <span asp-validation-for="Preview3d" class="text-danger"></span>
+    </div>
     <button type="submit" class="btn btn-primary">Надіслати</button>
 </form>
